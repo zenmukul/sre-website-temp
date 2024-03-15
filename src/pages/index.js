@@ -17,7 +17,7 @@ const Index = () => {
       isHomePage={true}
     >
       <HeroSection />
-      <BrandLogos />
+      {/* <BrandLogos /> */}
 
       <AboutSection />
       {/* <StatsSection /> */}
@@ -25,7 +25,7 @@ const Index = () => {
       <JoinSection />
       <BlogSection />
       <VideoSlider />
-      <FAQSection />
+      {/* <FAQSection /> */}
       {/* <Newsletter /> */}
     </Layout>
   );
