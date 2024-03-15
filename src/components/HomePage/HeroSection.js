@@ -2,6 +2,7 @@ import React from "react";
 import SectionWrapper from "../SectionWrapper";
 import Button from "../Button";
 import { BsSlack } from "react-icons/bs";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -28,13 +29,13 @@ const HeroSection = () => {
                 </span>
               </p>
               <div className="md:px-4 mt-8 px-0 flex gap-4 justify-center lg:px-0">
-                <Button
-                  variant="normal"
-                  override=" mr-2 lg:mr-4
-                  inline-flex items-center justify-center w-1/2  md:px-8 py-2 md:py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl  hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 focus:ring-offset-gray-50"
+                <Link
+                  href="https://sre-community.slack.com/join/shared_invite/zt-1xyavwok7-HO1WylL4CVDeyXsVKoy9Eg"
+                  override="mr-2 lg:mr-4 inline-flex items-center justify-center w-1/2  md:px-8 py-2 md:py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl  hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 focus:ring-offset-gray-50"
+                  className="inline-flex items-center justify-center w-full px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl  hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
                 >
                   Join Slack
-                </Button>
+                </Link>
               </div>
             </div>
           </div>

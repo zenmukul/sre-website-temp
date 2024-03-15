@@ -7,11 +7,11 @@ import { PopupButton } from "@typeform/embed-react";
 import { BsPhoneFill, BsTelephone, BsTelephoneFill } from "react-icons/bs";
 
 const data = [
-  // {
-  //   id: 1,
-  //   title: 'Home',
-  //   link: '/',
-  // },
+  {
+    id: 1,
+    title: "Home",
+    link: "/",
+  },
   {
     id: 2,
     title: "Jobs",

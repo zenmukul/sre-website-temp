@@ -65,9 +65,9 @@ const Footer = () => {
     <footer className="bottom-0 py-10 sm:py-10 lg:py-16 sm:pt-16 lg:pt-24 bg-gray-50">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-8xl">
         <div className="flex flex-col gap-4 justify-center items-center">
-          <span className="mb-6 sm:mb-0 w-full">
+          {/* <span className="mb-6 sm:mb-0 w-full">
             <Newsletter />
-          </span>
+          </span> */}
           <span className="flex flex-col sm:flex-row items-center justify-between w-full">
             <p className="mb-4 sm:mb-0">Site Reliability Engineering</p>
             {/* Navigation Menu */}

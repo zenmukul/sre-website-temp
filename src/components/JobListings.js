@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useState } from "react";
 // import GoogleLogo from "./google-logo.png";
 // import AmazonLogo from "./amazon-logo.png";
@@ -9,24 +10,30 @@ const jobListings = [
     title: "Senior Site Reliability Engineer",
     company: "Google",
     role: "SRE",
+    link: "https://careers.google.com/jobs/results/",
     // logo: GoogleLogo,
   },
   {
     title: "Infrastructure Engineer",
     company: "Amazon",
     role: "Infrastructure",
+    link: "https://careers.google.com/jobs/results/",
+
     // logo: AmazonLogo,
   },
   {
     title: "DevOps Engineer",
     company: "Microsoft",
     role: "SRE",
+    link: "https://careers.google.com/jobs/results/",
+
     // logo: MicrosoftLogo,
   },
   {
     title: "Site Reliability Engineer",
     company: "Facebook",
     role: "SRE",
+    link: "https://careers.google.com/jobs/results/",
     // logo: FacebookLogo,
   },
 ];
@@ -79,29 +86,31 @@ const Sidebar = ({ handleFilterChange, handleClearAll }) => {
   );
 };
 
-const JobCard = ({ title, company, role, logo }) => {
+const JobCard = ({ title, company, role, logo, link }) => {
   return (
-    <div
-      className="bg-white shadow-sm rounded-lg py-6 px-4 w-full
+    <Link href={link} target="_blank">
+      <div
+        className="bg-white shadow-sm rounded-lg py-6 px-4 w-full
    curosr-pointer border border-gray-200 
     hover:border-blue-500
     "
-    >
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-4">
-          <img
-            src="https://bcassetcdn.com/public/blog/wp-content/uploads/2022/10/05201459/Microsoft.png"
-            alt={`${company} logo`}
-            className="w-12 h-12 object-contain m-0 p-0"
-          />
-          <div>
-            <h3 className="text-lg font-bold">{title}</h3>
-            <p className="text-gray-700">{company}</p>
+      >
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-4">
+            <img
+              src="https://bcassetcdn.com/public/blog/wp-content/uploads/2022/10/05201459/Microsoft.png"
+              alt={`${company} logo`}
+              className="w-12 h-12 object-contain m-0 p-0"
+            />
+            <div>
+              <h3 className="text-lg font-bold">{title}</h3>
+              <p className="text-gray-700">{company}</p>
+            </div>
           </div>
+          <p className="text-gray-500">{role}</p>
         </div>
-        <p className="text-gray-500">{role}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 
@@ -109,16 +118,23 @@ const MainArea = ({ filteredJobs }) => {
   return (
     <div className="flex flex-wrap px-6 w-full gap-4">
       <h2 className="text-2xl font-bold mb-4">Job Openings</h2>
-      {filteredJobs.map((job) => (
-        <div key={job.title} className="w-full">
-          <JobCard
-            title={job.title}
-            company={job.company}
-            role={job.role}
-            // logo={job.logo}
-          />
+      {!filteredJobs.length ? (
+        <div className="w-full bg-white shadow-sm rounded-lg py-6 px-4">
+          <p>No jobs found</p>
         </div>
-      ))}
+      ) : (
+        filteredJobs?.map((job) => (
+          <div key={job.title} className="w-full">
+            <JobCard
+              title={job.title}
+              company={job.company}
+              role={job.role}
+              link={job.link}
+              // logo={job.logo}
+            />
+          </div>
+        ))
+      )}
     </div>
   );
 };
