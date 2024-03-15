@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://sitereliabilityengineering.org
+
+# Sitemaps
+Sitemap: https://sitereliabilityengineering.org/sitemap.xml

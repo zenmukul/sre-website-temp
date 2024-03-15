@@ -1,0 +1,47 @@
+{
+  "name": "site-reliability-engineering",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SRE Community Website",
+  "author": "Mukul Chugh <mukulchughofficial@gmail.com> (https://mukulchugh.com/)",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "build-stats": "cross-env ANALYZE=true npm run build",
+    "export": "next export",
+    "build-prod": "run-s clean build export",
+    "clean": "rimraf .next out",
+    "postbuild": "next-sitemap"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.14",
+    "@typeform/embed-react": "^2.20.0",
+    "framer-motion": "^10.12.4",
+    "next": "^13.3.0",
+    "next-seo": "^5.15.0",
+    "next-sitemap": "^4.0.6",
+    "normalize.css": "^8.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
+    "sharp": "^0.32.0",
+    "swiper": "^9.2.4"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^13.3.0",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.33",
+    "autoprefixer": "^10.4.14",
+    "cross-env": "^7.0.3",
+    "cssnano": "^6.0.0",
+    "http-server": "^14.1.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.7",
+    "rimraf": "^4.4.1",
+    "start-server-and-test": "^2.0.0",
+    "tailwindcss": "^3.3.1"
+  }
+}
